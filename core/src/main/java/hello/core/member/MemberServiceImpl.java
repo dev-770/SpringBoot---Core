@@ -1,0 +1,25 @@
+package hello.core.member;
+
+public class MemberServiceImpl implements MemberService {
+
+	private MemberRepository memberRepository;
+	
+	
+	
+	public MemberServiceImpl(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
+
+	@Override
+	public void join(Member Member) {
+		// TODO Auto-generated method stub
+		memberRepository.save(Member);
+	}
+
+	@Override
+	public Member findMember(Long memberId) {
+		// TODO Auto-generated method stub
+		return memberRepository.findById(memberId);
+	}
+
+}
